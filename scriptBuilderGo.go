@@ -61,8 +61,8 @@ func main()  {
       // VARIABLES BEING GENERATED END
       //##################################################################################################################
       //Create Header File.
-      headerFile, err := os.Create(watchman_group_name+".sh")
-      os.Chmod(watchman_group_name+".sh", 0764)
+      headerFile, err := os.Create(namesync+".sh")
+      os.Chmod(namesync+".sh", 0764)
       if err != nil {
         log.Fatal("Cannot create header file", err)
       }
@@ -89,7 +89,7 @@ func main()  {
       //Grab Contents From Bash Template
       input, err := ioutil.ReadFile("/opt/goJson/BashTemplates/testMerge.sh")
       //Append Bash Template Contents To JSON Generated Header File
-      file, err := os.OpenFile(watchman_group_name+".sh", os.O_WRONLY|os.O_APPEND, 0764)
+      file, err := os.OpenFile(namesync+".sh", os.O_WRONLY|os.O_APPEND, 0764)
         if err != nil {
                 fmt.Println(err)
         }
